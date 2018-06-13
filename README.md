@@ -28,6 +28,7 @@ Calling `.html_safe` on a String converts that string to a `SafeBuffer`, which m
 ```
 <p class="text">.html_safe + <strong>
 # => "<p class="text>&lt;strong&gt;"
+```
 
 
 ## This guide is still under construction
