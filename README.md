@@ -1,4 +1,4 @@
-# Rails: HTML Escaping, Related Methods, Sanitization, and XSS Attacks explained.
+# Rails: html_safe, Sanitization, and XSS
 
 ## Significance of escaping HTML
 
@@ -78,12 +78,13 @@ end
 
 ### raw
 
-Source: Rails Source Code
+Rails Source Code:
 ```
 def raw(stringish)
   stringish.to_s.html_safe
 end
 ```
+
 
 `raw` will first convert its input to a String, and then mark it as `html_safe`. It will return its input without escaping it, and therefore can be dangerous if used with unsafe user input.
 
