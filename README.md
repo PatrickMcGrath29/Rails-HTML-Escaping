@@ -48,7 +48,7 @@ end
 
 ## Functions: h, raw, <%==
 
-### <%= h @user.first_name %>
+### h
 
 The function h is a helper method for the function `html_escape`. h will escape whatever input it is given, as long as that input is not marked as `html_safe`
 
@@ -75,5 +75,35 @@ def unwrapped_html_escape(s) # :nodoc:
   end
 end
 ```
+
+### raw
+
+```
+def raw(stringish)
+  stringish.to_s.html_safe
+end
+```
+
+raw will first convert its input to a String, and then mark it as `html_safe`. It will return its input without escaping it, and therefore can be dangerous if used with unsafe user input.
+
+```
+@unsafe_user_input = "<script>alert(document.cookies)</script>"
+
+...
+
+<div class="element">
+  <%= raw @unsafe_user_input %> # danger!
+</div>
+```
+`# =>`
+```
+<div class="element">
+  <script>alert(document.cookies)</script>
+</div>
+```
+
+### <%==
+
+`<%== ... %>` is an alias for `raw`. It has exactly the same behavior.
 
 ## This guide is still under construction
