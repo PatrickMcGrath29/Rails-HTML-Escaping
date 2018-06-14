@@ -78,6 +78,7 @@ end
 
 ### raw
 
+Source: Rails Source Code
 ```
 def raw(stringish)
   stringish.to_s.html_safe
