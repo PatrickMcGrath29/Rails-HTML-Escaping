@@ -1,4 +1,4 @@
-# Guide into how Ruby on Rails handles HTML escaping, and how you can prevent XSS attacks
+# Rails: HTML Escaping, Related Methods, Sanitization, and XSS Attacks explained.
 
 ## Significance of escaping HTML
 
